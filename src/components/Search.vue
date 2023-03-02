@@ -1,9 +1,24 @@
+<script setup lang="ts">
+const router = useRouter()
+const text = ref('')
+
+const handleSearch = () => {
+  router.push({
+    path: '/search',
+    query: {
+      content: text.value,
+    },
+  })
+}
+</script>
+
 <template>
   <div class="relative flex items-center">
     <input
-      placeholder="搜索文章"
-      px-3 py-1.5
-      rounded border
+      v-model="text"
+      placeholder="搜索文章" px-3
+      py-1.5 rounded
+      border
       border-gray-300
       focus:outline-none
       focus:ring-2
@@ -22,6 +37,7 @@
       hover:rotate-100
       i-carbon-search
       cursor-pointer
+      @click="handleSearch"
     />
   </div>
 </template>
