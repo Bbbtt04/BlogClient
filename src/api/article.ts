@@ -7,3 +7,7 @@ export const getArchive = () => {
 export const indexData = () => {
   return request.get('/site/index')
 }
+
+export const getArticle = (id: any) => {
+  return request.get(`/article/${id}`)
+}

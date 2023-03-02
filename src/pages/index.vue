@@ -6,7 +6,6 @@ const data = ref([])
 onMounted(() => {
   indexData().then((res) => {
     data.value = res.data
-    console.log(data.value)
   })
 })
 </script>

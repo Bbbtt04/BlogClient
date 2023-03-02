@@ -3,15 +3,20 @@ defineProps<{
   list: any
 }>()
 
+const router = useRouter()
 const formatDate = (time: string) => {
   return useDateFormat(time, 'MMMM DD , aa', { locales: 'en-US' }).value
+}
+
+const handleTitleClick = (id: string) => {
+  router.push(`/content/${id}`)
 }
 </script>
 
 <template>
   <div v-for="item in list" :key="item.id" mt-8>
     <div min-h-45 border-2 rounded-2 px-4 py-4 dark:border-gray>
-      <span text-2xl hover:title duration-100 cursor="pointer"> # {{ item.title }}</span>
+      <span text-2xl hover:title duration-100 cursor="pointer" @click="handleTitleClick(item.id)"> # {{ item.title }}</span>
       <div mt-3 color-gray-400>
         {{ formatDate(item.createdAt) }}
       </div>
@@ -29,7 +34,7 @@ const formatDate = (time: string) => {
           </span>
         </div>
         <div
-          text-xl bg-gray-200 color-black px-2 py-1 rounded-2
+          text-xl bg-gray-200 color-black px-2 py-1 rounded
           cursor="pointer" hover:bg-gray-300 duration-150
           dark:bg-emerald dark:hover:bg-emerald-200
         >

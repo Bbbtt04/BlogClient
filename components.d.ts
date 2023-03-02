@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     Article: typeof import('./src/components/ArticleList.vue')['default']
     ArticleCard: typeof import('./src/components/ArticleCard.vue')['default']
     ArticleList: typeof import('./src/components/ArticleList.vue')['default']
+    Markdown: typeof import('./src/components/Markdown.vue')['default']
     NavBar: typeof import('./src/components/NavBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
