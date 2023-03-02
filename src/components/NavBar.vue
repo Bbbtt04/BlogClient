@@ -15,14 +15,17 @@
           <span class="lt-md:hidden">首页</span>
           <div i-ri-article-line md:hidden />
         </router-link>
-        <router-link to="/projects" title="Projects">
-          <span class="lt-md:hidden">作品</span>
-          <div i-ri-lightbulb-line class="md:hidden" />
-        </router-link>
         <router-link to="/talks" class="lt-md:hidden" title="Talks">
           留言板
         </router-link>
-        <router-link to="/links" class="lt-md:hidden" title="Podcasts">
+        <router-link to="/archive" class="lt-md:hidden" title="Archive">
+          归档
+        </router-link>
+        <router-link to="/log" class="lt-md:hidden" title="Logs">
+          建站
+        </router-link>
+
+        <router-link to="/links" class="lt-md:hidden" title="LinkS">
           友链
         </router-link>
 
