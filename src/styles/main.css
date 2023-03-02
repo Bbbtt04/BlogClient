@@ -14,3 +14,16 @@ html.dark {
   width: 1000px;
   margin: 0 auto;
 }
+
+body::-webkit-scrollbar {
+  width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 4px;
+}
+
+body.dark::-webkit-scrollbar-thumb {
+  background-color: #3f3f
+}
