@@ -26,6 +26,10 @@
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue-macros/volar": "^0.5.15",
     "@vue/test-utils": "^2.2.7",
+    "commitizen": "^4.3.0",
+    "commitlint-config-cz": "^0.13.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.0.0",
     "eslint": "^8.32.0",
     "jsdom": "^21.0.0",
     "pnpm": "^7.25.1",
@@ -42,5 +46,10 @@
   },
   "eslintConfig": {
     "extends": "@antfu"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
   }
 }
