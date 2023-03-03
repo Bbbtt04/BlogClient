@@ -11,12 +11,12 @@ const props = defineProps({
 
 <template>
   <div>
-    <VMdPreview :text="props.content" />
+    <VMdPreview :text="props.content" class="md" />
   </div>
-  <!-- {{ props.content.id }} -->
-  <!-- {{ text }} -->
 </template>
 
 <style scoped>
-
+.md > div{
+  background-color: red;
+}
 </style>
