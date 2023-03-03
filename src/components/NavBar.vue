@@ -1,3 +1,31 @@
+<script setup lang="ts">
+import request from '@/utils/request'
+
+const defaultMenus = ref([
+  { name: '首页', path: '/' },
+  { name: '归档', path: '/archive' },
+  { name: '建站', path: '/log' },
+  { name: '友联', path: '/links' },
+])
+
+function addMenus(list: Array<any> | undefined) {
+  list?.forEach((item) => {
+    const obj: any = {}
+    obj.name = item.name
+    obj.path = `/page${item.path}`
+    defaultMenus.value.push(obj)
+  })
+}
+
+onMounted(async () => {
+  const { data } = await request({
+    url: '/page',
+    method: 'Get',
+  })
+  addMenus(data.list)
+})
+</script>
+
 <template>
   <header class="header z-40 shadow dark:drop-shadow ">
     <router-link
@@ -11,33 +39,11 @@
       <div class="spacer" />
       <div class="right">
         <Search />
-        <router-link to="/" title="Blog">
-          <span class="lt-md:hidden">首页</span>
-          <div i-ri-article-line md:hidden />
-        </router-link>
-        <router-link to="/talks" class="lt-md:hidden" title="Talks">
-          留言板
-        </router-link>
-        <router-link to="/archive" class="lt-md:hidden" title="Archive">
-          归档
-        </router-link>
-        <router-link to="/log" class="lt-md:hidden" title="Logs">
-          建站
-        </router-link>
-
-        <router-link to="/links" class="lt-md:hidden" title="LinkS">
-          友链
-        </router-link>
-
-        <router-link to="/about" title="Demos">
-          <span class="lt-md:hidden">关于</span>
-          <div i-ri-screenshot-line class="md:hidden" />
+        <router-link v-for="menu in defaultMenus" :key="menu.path" :to="menu.path">
+          {{ menu.name }}
         </router-link>
         <a href="https://github.com/Bbbtt04" target="_blank" title="GitHub" class="lt-md:hidden">
           <div i-uil-github-alt />
-        </a>
-        <a href="/feed.xml" target="_blank" title="RSS" class="lt-md:hidden">
-          <div i-la-rss-square style="font-size:1.25rem; margin: 0 -0.125rem;" />
         </a>
         <button icon-btn @click="toggleDark()">
           <div dark:i-carbon-moon i-carbon-sun />
