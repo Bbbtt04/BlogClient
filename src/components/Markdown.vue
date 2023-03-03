@@ -16,7 +16,11 @@ const props = defineProps({
 </template>
 
 <style scoped>
-.md > div{
-  background-color: red;
+::v-deep .vuepress-markdown-body {
+  background:none;
+  font-size: 16px;
+}
+::v-deep .vuepress-markdown-body {
+  @apply dark:color-gray-300
 }
 </style>
