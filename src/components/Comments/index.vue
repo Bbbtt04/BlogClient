@@ -148,10 +148,9 @@ onMounted(() => {
       </div>
     </template>
     <template v-else>
-      <div w-50 mx-auto>
-        <img src="../../assets/image/empty.png">
-        <div text-gray>
-          快做第一个评论的人吧
+      <div w-50 mx-auto bg-transparent>
+        <div text-gray mt-30>
+          快做第一个评论的人吧~~
         </div>
       </div>
     </template>
