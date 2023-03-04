@@ -4,6 +4,7 @@ import request from '@/utils/request'
 const route = useRoute()
 const { id } = route.params
 const page: any = ref({})
+const postId: any = id
 
 onMounted(async () => {
   const { data } = await request({
@@ -17,6 +18,7 @@ onMounted(async () => {
 <template>
   <div>
     <Markdown :content="page.content" />
+    <Comments :id="postId" />
   </div>
 </template>
 
