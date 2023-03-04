@@ -17,6 +17,7 @@ declare module '@vue/runtime-core' {
     IconMarkdown: typeof import('./src/components/Icon/IconMarkdown.vue')['default']
     Markdown: typeof import('./src/components/Markdown.vue')['default']
     NavBar: typeof import('./src/components/NavBar.vue')['default']
+    Plum: typeof import('./src/components/Plum.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Search: typeof import('./src/components/Search.vue')['default']
