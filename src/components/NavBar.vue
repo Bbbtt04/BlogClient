@@ -28,13 +28,6 @@ onMounted(async () => {
 
 <template>
   <header class="header z-40 shadow dark:drop-shadow ">
-    <router-link
-      class="w-10 h-10 absolute lg:fixed m-6 select-none outline-none"
-      to="/"
-      focusable="false"
-    >
-      icon
-    </router-link>
     <nav class="nav">
       <div class="spacer" />
       <div class="right">

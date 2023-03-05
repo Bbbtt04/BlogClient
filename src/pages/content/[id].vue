@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { getArticle } from '@/api/article'
 import { formatDate } from '@/utils'
+import request from '@/utils/request'
 const route = useRoute()
 const id: any = route.params.id
 
@@ -8,6 +9,11 @@ const article: any = ref({})
 onMounted(async () => {
   const { data } = await getArticle(id)
   article.value = data
+
+  request({
+    url: `/article/${id}/views`,
+    method: 'post',
+  })
 })
 </script>
 
