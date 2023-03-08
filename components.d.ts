@@ -7,22 +7,17 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Article: typeof import('./src/components/ArticleList.vue')['default']
     ArticleCard: typeof import('./src/components/ArticleCard.vue')['default']
     ArticleList: typeof import('./src/components/ArticleList.vue')['default']
     CommentList: typeof import('./src/components/Comments/components/CommentList.vue')['default']
     Comments: typeof import('./src/components/Comments/index.vue')['default']
     Edit: typeof import('./src/components/Comments/components/Edit.vue')['default']
     FaBrandsMarkdown: typeof import('./src/components/Icon/fa-brands-markdown.vue')['default']
-    IconMarkdown: typeof import('./src/components/Icon/IconMarkdown.vue')['default']
     Markdown: typeof import('./src/components/Markdown.vue')['default']
     NavBar: typeof import('./src/components/NavBar.vue')['default']
     Plum: typeof import('./src/components/Plum.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Search: typeof import('./src/components/Search.vue')['default']
-    TheCounter: typeof import('./src/components/TheCounter.vue')['default']
-    TheFooter: typeof import('./src/components/TheFooter.vue')['default']
-    TheInput: typeof import('./src/components/TheInput.vue')['default']
   }
 }

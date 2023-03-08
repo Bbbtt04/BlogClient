@@ -11,6 +11,7 @@ import VueMacros from 'unplugin-vue-macros/vite'
 import transformerDirective from '@unocss/transformer-directives'
 
 export default defineConfig({
+  base: './',
   resolve: {
     alias: {
       '@/': `${path.resolve(__dirname, 'src')}/`,
@@ -21,7 +22,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'http://43.143.177.227:4000/',
         changeOrigin: true,
         rewrite: path => path.replace(/^\/api/, ''),
       },
