@@ -88,7 +88,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div w-200 mx-auto pb-30>
+  <div x-auto pb-30>
     <Edit @on-submit="handleSubmit" />
     <div mt-5>
       {{ total }} 条评论

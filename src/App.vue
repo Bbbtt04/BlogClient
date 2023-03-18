@@ -1,7 +1,7 @@
 <template>
   <Plum />
   <NavBar />
-  <div class="wrapper mt-2">
+  <div class="mt-2 w-100% xl:w-1000px mx-auto">
     <router-view v-slot="{ Component }">
       <transition name="fade" mode="out-in">
         <component :is="Component" />

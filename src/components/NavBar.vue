@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import request from '@/utils/request'
+const router = useRouter()
+const visible = ref(false)
 
 const defaultMenus = ref([
   { name: '首页', path: '/' },
@@ -27,10 +29,12 @@ onMounted(async () => {
 </script>
 
 <template>
-  <header class="header z-40 shadow dark:drop-shadow ">
-    <nav class="nav">
-      <div class="spacer" />
-      <div class="right">
+  <header class="z-40 shadow h-20 dark:drop-shadow">
+    <div class="flex justify-between px-5 items-center xl:w-1000px mx-auto">
+      <div class="logo" @click="router.push('/')">
+        <img src="@/assets/image/logo.png" alt="">
+      </div>
+      <nav class="nav hidden md:flex items-center">
         <Search />
         <router-link v-for="menu in defaultMenus" :key="menu.path" :to="menu.path">
           {{ menu.name }}
@@ -41,59 +45,22 @@ onMounted(async () => {
         <button icon-btn @click="toggleDark()">
           <div dark:i-carbon-moon i-carbon-sun />
         </button>
-      </div>
-    </nav>
+      </nav>
+      <div
+        class="i-carbon-menu w-10 h-10 bg-gray-500 md:hidden"
+        @click="visible = !visible"
+      />
+    </div>
   </header>
 </template>
 
 <style scoped>
-.header h1 {
-  margin-bottom: 0;
-}
-
 .logo {
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-}
-
-.nav {
-  padding: 2rem;
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto max-content;
-  box-sizing: border-box;
-}
-
-.nav > * {
-  margin: auto;
-}
-
-.nav img {
-  margin-bottom: 0;
-}
-
-.nav a {
+  width: 5rem;
+  height: 5rem;
   cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-  transition: opacity 0.2s ease;
-  opacity: 0.6;
-  outline: none;
 }
-
-.nav a:hover {
-  opacity: 1;
-  text-decoration-color: inherit;
-}
-
-.nav .right {
-  display: grid;
-  grid-gap: 1.2rem;
-  grid-auto-flow: column;
-}
-
-.nav .right > * {
-  margin: auto;
+.nav > *{
+  margin-left: 20px;
 }
 </style>
