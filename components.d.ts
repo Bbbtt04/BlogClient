@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     Comments: typeof import('./src/components/Comments/index.vue')['default']
     Edit: typeof import('./src/components/Comments/components/Edit.vue')['default']
     FaBrandsMarkdown: typeof import('./src/components/Icon/fa-brands-markdown.vue')['default']
+    Footer: typeof import('./src/components/Footer.vue')['default']
     Markdown: typeof import('./src/components/Markdown.vue')['default']
     NavBar: typeof import('./src/components/NavBar.vue')['default']
     Plum: typeof import('./src/components/Plum.vue')['default']
