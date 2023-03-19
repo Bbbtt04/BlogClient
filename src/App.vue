@@ -1,13 +1,14 @@
 <template>
   <Plum />
   <NavBar />
-  <div class="wrapper mt-2">
+  <div class="mt-2 w-100% overflow-x-hidden xl:w-1000px mx-auto min-h-170 md:px-5">
     <router-view v-slot="{ Component }">
       <transition name="fade" mode="out-in">
         <component :is="Component" />
       </transition>
     </router-view>
   </div>
+  <Footer />
 </template>
 
 <style>
