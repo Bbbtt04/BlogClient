@@ -29,7 +29,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <header class="z-40 shadow h-20 dark:drop-shadow">
+  <header class="z-40 fixed top-0 left-0 right-0 shadow h-20 backdrop-blur-8 dark:drop-shadow">
     <div class="flex justify-between px-5 items-center xl:w-1000px mx-auto">
       <div class="logo" @click="router.push('/')">
         <img src="@/assets/image/logo.png" alt="">
@@ -51,6 +51,12 @@ onMounted(async () => {
         @click="visible = !visible"
       />
     </div>
+
+    <MobileNav
+      :menu="defaultMenus"
+      :visible="visible"
+      @on-close="visible = false"
+    />
   </header>
 </template>
 
